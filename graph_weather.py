@@ -27,6 +27,8 @@ city_entry = ctk.CTkEntry(root, placeholder_text='Enter here your city', width=3
                           textvariable=save_text, bg_color='gray', fg_color='gray', text_color='white', corner_radius=5,
                           border_width=4, placeholder_text_color='white')
 city_entry.place(y=200, x=410)
+weather_button = ctk.CTkButton(root, text='Show weather', width=140, height=35, bg_color='gray', font=('Helvetica', 15))
+weather_button.place(x=488, y=270)
 
 
 
