@@ -41,16 +41,17 @@ label2.place(x=34, y=85)
 
 save_text = ctk.StringVar()
 city_entry = ctk.CTkEntry(root, placeholder_text='Enter here your city', width=300, height=40, font=('Arial', 17),
-                          textvariable=save_text, bg_color='gray', fg_color='gray', text_color='white', corner_radius=5,
+                          textvariable=save_text, bg_color='#242424', fg_color='gray', text_color='white', corner_radius=5,
                           border_width=4, placeholder_text_color='white')
 city_entry.place(y=260, x=410)
-weather_button = ctk.CTkButton(root, text='Show weather', width=140, height=35, bg_color='#1C4AA8',
-                                font=('Helvetica', 16, 'italic'), fg_color='#1C4AA8', command=weather_script)
+weather_button = ctk.CTkButton(root, text='Show weather', width=140, height=35, bg_color='#242424',
+                                font=('Helvetica', 16, 'italic'), fg_color='#242424', corner_radius=20, border_width=2,
+                                command=weather_script, border_color='#1258E2', hover_color='#121212')
 weather_button.place(x=488, y=330)
-weather_frame = ctk.CTkFrame(root, width=300, height=80, fg_color='gray', bg_color='gray')
+weather_frame = ctk.CTkFrame(root, width=300, height=80, fg_color='gray', bg_color='#242424', corner_radius=20)
 weather_frame.place(x=410, y=150)
 weather_label = ctk.CTkLabel(root, text='There will be weather', text_color='black', fg_color='gray', bg_color='gray',
                              font=('Helvetica', 16, 'bold'), anchor='center')
-weather_label.place(x=410, y=156)
+weather_label.place(x=420, y=170)
 
 root.mainloop()
