@@ -43,6 +43,27 @@ def set_api_key():
     else:
         api_button.configure(border_color='#B01111')
 
+def theme_color(event):
+    option = save_option.get()
+
+    if option == 'Dark':
+        root._set_appearance_mode('dark')
+        frame.configure(bg_color='#2C2C2C')
+        weather_frame.configure(bg_color='#242424')
+        weather_button.configure(bg_color='#242424')
+        weather_button.configure(fg_color='#242424')
+        weather_button.configure(text_color='white')
+        city_entry.configure(bg_color='#242424')
+    elif option == 'Light':
+        root._set_appearance_mode('light')
+        frame.configure(bg_color='#F0F0F0')
+        weather_frame.configure(bg_color='#EBEBEB')
+        weather_button.configure(bg_color='#EBEBEB')
+        weather_button.configure(fg_color='#EBEBEB')
+        weather_button.configure(text_color='black')
+        city_entry.configure(bg_color='#EBEBEB')
+
+
 frame = ctk.CTkFrame(root, fg_color='#2C2C2C', bg_color='#2C2C2C', height=600, width=250)
 frame.place(x=0, y=0)
 
@@ -78,5 +99,10 @@ api_button = ctk.CTkButton(root, text='Save key', width=100, height=28, bg_color
                             font=('Helvetica', 16, 'italic'), fg_color='#2C2C2C', border_width=2, border_color='white',
                             command=set_api_key)
 api_button.place(x=71, y=322)
+save_option = ctk.StringVar(value='Dark')
+theme_option = ctk.CTkOptionMenu(root, bg_color='#2C2C2C', width=160, height=37, values=['Dark', 'Light'],
+                                 anchor='center', font=('Helvetica', 17), variable=save_option, fg_color='white',
+                                 text_color='black', button_color='#1258E2', corner_radius=5, command=theme_color)
+theme_option.place(x=40, y=400)
 
 root.mainloop()
